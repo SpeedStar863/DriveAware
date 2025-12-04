@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "5771A93B-6843-480E-A9D8-96103CF7B977",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DriveAware.xcodeproj",
+      "identifier" : "61BA3D882E6570FF008C6D0D",
+      "name" : "DriveAware"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DriveAware.xcodeproj",
+        "identifier" : "61BA3D9C2E657100008C6D0D",
+        "name" : "DriveAwareTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DriveAware.xcodeproj",
+        "identifier" : "61BA3DA62E657100008C6D0D",
+        "name" : "DriveAwareUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		615867522E88818F00392428 /* DriveAware.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6158674D2E87711A00392428 /* DriveAware.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61BA3D9E2E657100008C6D0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61BA3D812E6570FF008C6D0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61BA3D882E6570FF008C6D0D;
+			remoteInfo = DriveAware;
+		};
+		61BA3DA82E657100008C6D0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61BA3D812E6570FF008C6D0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61BA3D882E6570FF008C6D0D;
+			remoteInfo = DriveAware;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6158674E2E87711A00392428 /* DriveAware.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DriveAware.xcdatamodel; sourceTree = "<group>"; };
+		61BA3D892E6570FF008C6D0D /* DriveAware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveAware.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61BA3D9D2E657100008C6D0D /* DriveAwareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveAwareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61BA3DA72E657100008C6D0D /* DriveAwareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveAwareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61F51BC32E6AA483008E81B1 /* DriveAware.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DriveAware.xctestplan; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		614B89222EB2756F002B6C3E /* Exceptions for "DriveAwareTests" folder in "DriveAwareTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DriveAwareTests.swift,
+			);
+			target = 61BA3D9C2E657100008C6D0D /* DriveAwareTests */;
+		};
+		614B89232EB2756F002B6C3E /* Exceptions for "DriveAwareTests" folder in "DriveAwareUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DriveAwareTests.swift,
+			);
+			target = 61BA3DA62E657100008C6D0D /* DriveAwareUITests */;
+		};
+		61BA3DAF2E657100008C6D0D /* Exceptions for "DriveAware" folder in "DriveAware" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DriveAware.xcdatamodeld,
+				Info.plist,
+			);
+			target = 61BA3D882E6570FF008C6D0D /* DriveAware */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		614B89202EB2756F002B6C3E /* DriveAwareTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				614B89222EB2756F002B6C3E /* Exceptions for "DriveAwareTests" folder in "DriveAwareTests" target */,
+				614B89232EB2756F002B6C3E /* Exceptions for "DriveAwareTests" folder in "DriveAwareUITests" target */,
+			);
+			path = DriveAwareTests;
+			sourceTree = "<group>";
+		};
+		61BA3D8B2E6570FF008C6D0D /* DriveAware */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				61BA3DAF2E657100008C6D0D /* Exceptions for "DriveAware" folder in "DriveAware" target */,
+			);
+			path = DriveAware;
+			sourceTree = "<group>";
+		};
+		61BA3DAA2E657100008C6D0D /* DriveAwareUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriveAwareUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61BA3D862E6570FF008C6D0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3D9A2E657100008C6D0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3DA42E657100008C6D0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		61BA3D802E6570FF008C6D0D = {
+			isa = PBXGroup;
+			children = (
+				6158674D2E87711A00392428 /* DriveAware.xcdatamodeld */,
+				61F51BC32E6AA483008E81B1 /* DriveAware.xctestplan */,
+				61BA3D8B2E6570FF008C6D0D /* DriveAware */,
+				614B89202EB2756F002B6C3E /* DriveAwareTests */,
+				61BA3DAA2E657100008C6D0D /* DriveAwareUITests */,
+				61BA3D8A2E6570FF008C6D0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		61BA3D8A2E6570FF008C6D0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61BA3D892E6570FF008C6D0D /* DriveAware.app */,
+				61BA3D9D2E657100008C6D0D /* DriveAwareTests.xctest */,
+				61BA3DA72E657100008C6D0D /* DriveAwareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61BA3D882E6570FF008C6D0D /* DriveAware */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61BA3DB02E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAware" */;
+			buildPhases = (
+				61BA3D852E6570FF008C6D0D /* Sources */,
+				61BA3D862E6570FF008C6D0D /* Frameworks */,
+				61BA3D872E6570FF008C6D0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				61BA3D8B2E6570FF008C6D0D /* DriveAware */,
+			);
+			name = DriveAware;
+			packageProductDependencies = (
+			);
+			productName = DriveAware;
+			productReference = 61BA3D892E6570FF008C6D0D /* DriveAware.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61BA3D9C2E657100008C6D0D /* DriveAwareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61BA3DB52E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAwareTests" */;
+			buildPhases = (
+				61BA3D992E657100008C6D0D /* Sources */,
+				61BA3D9A2E657100008C6D0D /* Frameworks */,
+				61BA3D9B2E657100008C6D0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61BA3D9F2E657100008C6D0D /* PBXTargetDependency */,
+			);
+			name = DriveAwareTests;
+			packageProductDependencies = (
+			);
+			productName = DriveAwareTests;
+			productReference = 61BA3D9D2E657100008C6D0D /* DriveAwareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61BA3DA62E657100008C6D0D /* DriveAwareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61BA3DB82E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAwareUITests" */;
+			buildPhases = (
+				61BA3DA32E657100008C6D0D /* Sources */,
+				61BA3DA42E657100008C6D0D /* Frameworks */,
+				61BA3DA52E657100008C6D0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61BA3DA92E657100008C6D0D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				614B89202EB2756F002B6C3E /* DriveAwareTests */,
+				61BA3DAA2E657100008C6D0D /* DriveAwareUITests */,
+			);
+			name = DriveAwareUITests;
+			packageProductDependencies = (
+			);
+			productName = DriveAwareUITests;
+			productReference = 61BA3DA72E657100008C6D0D /* DriveAwareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61BA3D812E6570FF008C6D0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					61BA3D882E6570FF008C6D0D = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					61BA3D9C2E657100008C6D0D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 61BA3D882E6570FF008C6D0D;
+					};
+					61BA3DA62E657100008C6D0D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 61BA3D882E6570FF008C6D0D;
+					};
+				};
+			};
+			buildConfigurationList = 61BA3D842E6570FF008C6D0D /* Build configuration list for PBXProject "DriveAware" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 61BA3D802E6570FF008C6D0D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 61BA3D8A2E6570FF008C6D0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61BA3D882E6570FF008C6D0D /* DriveAware */,
+				61BA3D9C2E657100008C6D0D /* DriveAwareTests */,
+				61BA3DA62E657100008C6D0D /* DriveAwareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61BA3D872E6570FF008C6D0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3D9B2E657100008C6D0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3DA52E657100008C6D0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61BA3D852E6570FF008C6D0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615867522E88818F00392428 /* DriveAware.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3D992E657100008C6D0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61BA3DA32E657100008C6D0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61BA3D9F2E657100008C6D0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61BA3D882E6570FF008C6D0D /* DriveAware */;
+			targetProxy = 61BA3D9E2E657100008C6D0D /* PBXContainerItemProxy */;
+		};
+		61BA3DA92E657100008C6D0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61BA3D882E6570FF008C6D0D /* DriveAware */;
+			targetProxy = 61BA3DA82E657100008C6D0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		61BA3DB12E657100008C6D0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = DriveAware/DriveAware.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriveAware/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAware";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61BA3DB22E657100008C6D0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = DriveAware/DriveAware.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriveAware/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAware";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		61BA3DB32E657100008C6D0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		61BA3DB42E657100008C6D0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61BA3DB62E657100008C6D0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAwareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveAware.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriveAware";
+			};
+			name = Debug;
+		};
+		61BA3DB72E657100008C6D0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAwareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveAware.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriveAware";
+			};
+			name = Release;
+		};
+		61BA3DB92E657100008C6D0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAwareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriveAware;
+			};
+			name = Debug;
+		};
+		61BA3DBA2E657100008C6D0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5DZ4RPAS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "The-DriveAware-Company.DriveAwareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriveAware;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		61BA3D842E6570FF008C6D0D /* Build configuration list for PBXProject "DriveAware" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61BA3DB32E657100008C6D0D /* Debug */,
+				61BA3DB42E657100008C6D0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61BA3DB02E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAware" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61BA3DB12E657100008C6D0D /* Debug */,
+				61BA3DB22E657100008C6D0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61BA3DB52E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAwareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61BA3DB62E657100008C6D0D /* Debug */,
+				61BA3DB72E657100008C6D0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61BA3DB82E657100008C6D0D /* Build configuration list for PBXNativeTarget "DriveAwareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61BA3DB92E657100008C6D0D /* Debug */,
+				61BA3DBA2E657100008C6D0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6158674D2E87711A00392428 /* DriveAware.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6158674E2E87711A00392428 /* DriveAware.xcdatamodel */,
+			);
+			currentVersion = 6158674E2E87711A00392428 /* DriveAware.xcdatamodel */;
+			path = DriveAware.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 61BA3D812E6570FF008C6D0D /* Project object */;
+}

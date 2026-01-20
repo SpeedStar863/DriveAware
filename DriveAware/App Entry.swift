@@ -12,43 +12,167 @@ import CoreData
 @main
 struct DriveAwareApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @StateObject private var drivingManager = DrivingManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(
-                    MotionManager(context: persistenceController.container.viewContext)
-                )
+                .environmentObject(MotionManager(context: persistenceController.container.viewContext))
+                .environmentObject(drivingManager)
         }
     }
 }
 
 struct ContentView: View {
+    @EnvironmentObject var drivingManager: DrivingManager
+    @StateObject var motionManager = MotionManager(context: PersistenceController.shared.container.viewContext)
+
     var body: some View {
-            TabView {
-                HomeView(allLessons: drivingLessons)
-                    .tabItem {
-                        Label("Home", systemImage: "car.fill")
-                    }
-                
-                LearningHubView()
-                    .tabItem {
-                        Label("My Lessons", systemImage: "book.fill")
-                    }
-                
-                Plans()
-                    .tabItem {
-                        Label("Driving Plan", systemImage: "list.bullet.circle.fill")
-                    }
-                
-                DetectorView()
-                    .tabItem {
-                        Label("Detector", systemImage: "dot.radiowaves.left.and.right")
-                    }
-            }
+        TabView {
+            HomeView(allLessons: drivingLessons)
+                .tabItem { Label("Home", systemImage: "car.fill") }
+            
+            LearningHubView()
+                .tabItem { Label("My Lessons", systemImage: "book.fill") }
+            
+            Plans(manager: drivingManager)
+                .tabItem { Label("Driving Plan", systemImage: "list.bullet.circle.fill") }
+            
+            DetectorView()
+                .tabItem { Label("Detector", systemImage: "dot.radiowaves.left.and.right") }
+            
+            DriveChatView(context: drivingManager.generateAIContext(motionManager: motionManager))
+                .tabItem { Label("AI Coach", systemImage: "bubble.left.and.bubble.right.fill") }
         }
     }
+}
+
+import SwiftUI
+
+struct Plans: View {
+    @ObservedObject var manager: DrivingManager
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 14) {
+                    ForEach(manager.sortedDays, id: \.self) { day in
+                        DayPlanRow(day: day, manager: manager)
+                        
+                        Divider()
+                            .padding(.horizontal)
+                    }
+                }
+                .padding(.top)
+            }
+            .navigationTitle("Driving Plan")
+        }
+    }
+}
+
+struct DayPlanRow: View {
+    let day: String
+    @ObservedObject var manager: DrivingManager
+    
+    private var tasks: [String] { manager.plans[day] ?? [] }
+    private var progress: Double {
+        let total = Double(tasks.count)
+        let completed = Double(tasks.filter { manager.completedTasks.contains($0) }.count)
+        return total > 0 ? completed / total : 0
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Button(action: {
+                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                    manager.toggleExpanded(day)
+                }
+            }) {
+                HStack {
+                    Image(systemName: progress == 1.0 ? "checkmark.circle.fill" : (manager.expandedDays.contains(day) ? "chevron.down.circle.fill" : "chevron.right.circle.fill"))
+                        .foregroundColor(progress == 1.0 ? .green : .blue)
+                        .font(.title3)
+                    
+                    Text(day)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                    
+                    Spacer()
+                    
+                    Text("\(Int(progress * 100))%")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+            }
+            
+            ProgressBar(progress: progress)
+            
+            if manager.expandedDays.contains(day) {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(tasks, id: \.self) { task in
+                        TaskRow(task: task, manager: manager)
+                    }
+                }
+                .padding(.leading, 4)
+                .transition(.opacity.combined(with: .slide))
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct ProgressBar: View {
+    let progress: Double
+    
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(height: 6)
+                
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(progress == 1.0 ? Color.green : Color.blue)
+                    .frame(width: geo.size.width * progress, height: 6)
+                    .animation(.easeInOut(duration: 0.4), value: progress)
+            }
+        }
+        .frame(height: 6)
+        .padding(.bottom, 4)
+    }
+}
+
+struct TaskRow: View {
+    let task: String
+    @ObservedObject var manager: DrivingManager
+    
+    var body: some View {
+        Button(action: {
+            manager.toggleTaskCompletion(task)
+        }) {
+            HStack(alignment: .top) {
+                Image(systemName: manager.completedTasks.contains(task) ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(manager.completedTasks.contains(task) ? .green : .gray)
+                    .font(.title3)
+                Text(task)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
+            }
+            .padding(.vertical, 5)
+            .padding(.horizontal, 8)
+            .background(Color.blue.opacity(0.05))
+            .cornerRadius(10)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+#Preview {
+    Plans(manager: DrivingManager())
+}
 
 struct SkillAssessmentView: View {
     @State private var selectedScore: Int? = nil

@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct Plans: View {
-    @AppStorage("completedTasks") private var completedTasksData: Data = Data()
-    @AppStorage("expandedDays") private var expandedDaysData: Data = Data()
-    @State private var completedTasks: Set<String> = []
-    @State private var expandedDays: Set<String> = []
+class DrivingManager: ObservableObject {
+    private let tasksKey = "completedTasks"
+    private let daysKey = "expandedDays"
     
-    private let plans: [String: [String]] = [
+    @Published var completedTasks: Set<String> = []
+    @Published var expandedDays: Set<String> = []
+    
+    let plans: [String: [String]] = [
         "Beginner Day 1": ["• Get comfortable with your vehicle (adjust your seat, posture, mirrors, and head restraints)", "• Let an adult take you to an empty or abandoned parking lot where you can learn the mechanics of your pedals and steering wheel", "• Practice forward driving around the space and use your turn signals to imitate real-world scenarios", "• Continue at a calm pace and emphasize smooth driving"],
         "Beginner Day 2": ["• Return to the parking lot and recall your smooth driving movements from the day before", "• Practice turning on your headlights, windshield wipers, and hazard lights (also known as four-way flashers)", "• Brake a few times to practice your stopping technique and to test your brake lights", "• Shift gears and reverse for any amount of distance to accustom yourself", "• Accurately park in a parking space and reverse out of it, smoothly positioning your vehicle to drive in a different direction", "• Carefully navigate the parking lot as if it were full of cars and traffic"],
         "Beginner Day 3": ["• Return to the parking lot and remember your muscle movements from the day before", "• Imitate intersections and assumed stop signs to practice your application of road rules", "• Imagine different road signs and execute the appropriate actions", "• Finish off with a simple three-point turn"],
@@ -37,7 +38,7 @@ struct Plans: View {
         "Advanced Day 7": ["• Travel to the most busy highway in your area, turning off your GPS once you are there", "• Using guide signs, regulatory signs, warning signs, work zone signs, and mile markers, navigate to a specific faraway exit", "• Try to reach a personal status of highway proficiency!", "• Strengthen your intersection skills and road awareness once you are off the highway by repeating exercises from the intermediate level"],
     ]
     
-    private var sortedDays: [String] {
+    var sortedDays: [String] {
         let levels = ["Beginner", "Intermediate", "Advanced"]
         
         func parse(_ s: String) -> (Int, Int) {
@@ -52,135 +53,104 @@ struct Plans: View {
             return a.0 == b.0 ? a.1 < b.1 : a.0 < b.0
         }
     }
-    
-    var body: some View {
-            NavigationView {
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 14) {
-                        ForEach(sortedDays, id: \.self) { day in
-                            let tasks = plans[day] ?? []
-                            let total = Double(tasks.count)
-                            let completed = Double(tasks.filter { completedTasks.contains($0) }.count)
-                            let progress = total > 0 ? completed / total : 0
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                Button(action: {
-                                    withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-                                        toggleExpanded(day)
-                                    }
-                                }) {
-                                    HStack {
-                                        Image(systemName: progress == 1.0 ? "checkmark.circle.fill" : (expandedDays.contains(day) ? "chevron.down.circle.fill" : "chevron.right.circle.fill"))
-                                            .foregroundColor(progress == 1.0 ? .green : .blue)
-                                            .font(.title3)
-                                        
-                                        Text(day)
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.primary)
-                                        
-                                        Spacer()
-                                        
-                                        Text("\(Int(progress * 100))%")
-                                            .font(.caption)
-                                            .foregroundColor(.gray)
-                                    }
-                                }
-                                
-                                GeometryReader { geo in
-                                    ZStack(alignment: .leading) {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(Color.gray.opacity(0.2))
-                                            .frame(height: 6)
-                                        
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .fill(progress == 1.0 ? Color.green : Color.blue)
-                                            .frame(width: geo.size.width * progress, height: 6)
-                                            .animation(.easeInOut(duration: 0.4), value: progress)
-                                    }
-                                }
-                                .frame(height: 6)
-                                .padding(.bottom, 4)
-                                
-                                if expandedDays.contains(day) {
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        ForEach(plans[day]!, id: \.self) { task in
-                                            Button(action: {
-                                                toggleTaskCompletion(task)
-                                            }) {
-                                                HStack(alignment: .top) {
-                                                    Image(systemName: completedTasks.contains(task) ? "checkmark.circle.fill" : "circle")
-                                                        .foregroundColor(completedTasks.contains(task) ? .green : .gray)
-                                                        .font(.title3)
-                                                    Text(task)
-                                                        .foregroundColor(.primary)
-                                                        .multilineTextAlignment(.leading)
-                                                }
-                                                .padding(.vertical, 5)
-                                                .padding(.horizontal, 8)
-                                                .background(Color.blue.opacity(0.05))
-                                                .cornerRadius(10)
-                                            }
-                                            .buttonStyle(PlainButtonStyle())
-                                        }
-                                    }
-                                    .padding(.leading, 4)
-                                    .transition(.opacity.combined(with: .slide))
-                                }
-                            }
-                            Divider()
-                                .padding(.horizontal)
-                        }
-                    }
-                    .padding(.top)
-                }
-                .navigationTitle("Driving Plan")
+        
+        init() {
+            loadData()
+        }
+        
+        func toggleTaskCompletion(_ task: String) {
+            if completedTasks.contains(task) {
+                completedTasks.remove(task)
+            } else {
+                completedTasks.insert(task)
             }
-            .onAppear(perform: loadData)
+            saveData()
         }
-    
-    private func toggleTaskCompletion(_ task: String) {
-        if completedTasks.contains(task) {
-            completedTasks.remove(task)
-        } else {
-            completedTasks.insert(task)
+        
+        func toggleExpanded(_ day: String) {
+            if expandedDays.contains(day) {
+                expandedDays.remove(day)
+            } else {
+                expandedDays.insert(day)
+            }
+            saveData()
         }
-        saveData()
-    }
-    
-    private func toggleExpanded(_ day: String) {
-        if expandedDays.contains(day) {
-            expandedDays.remove(day)
-        } else {
-            expandedDays.insert(day)
+        
+    func generateAIContext(motionManager: MotionManager) -> String {
+            let completed = completedTasks.joined(separator: ", ")
+            let remaining = plans.values.flatMap { $0 }.filter { !completedTasks.contains($0) }
+            
+            let eventSummary = motionManager.eventCounts.map { "\($0.key.rawValue): \($0.value)" }.joined(separator: ", ")
+        
+            let totalEvents = motionManager.debouncedEvents.count
+            
+            let timestamp = Date().formatted(date: .abbreviated, time: .shortened)
+            
+            var context = """
+                ROLE: You are 'DriveCoach', a professional and encouraging driving instructor.
+                GOAL: Help the student master driving by reviewing their progress and answering questions.
+                
+                PERFORMANCE DATA (FROM AI SENSORS):
+                - Total Harsh Events Detected: \(totalEvents)
+                - Specific Event Breakdown: [\(eventSummary.isEmpty ? "No incidents detected yet" : eventSummary)]
+                
+                STUDENT PROGRESS:
+                - Completed Tasks: [\(completed)]
+                - Next Recommended Tasks: [\(remaining.prefix(3).joined(separator: ", "))]
+                
+                CURRENT TIME: \(timestamp)
+                
+                GUIDELINES:
+                1. Be concise. Student drivers are often busy.
+                2. Safety first. If a student asks something dangerous, correct them firmly but kindly.
+                3. Use the progress data. If they haven't finished 'Day 1: Basic Controls', remind them to start there.
+                4. Keep the tone motivational, like a coach.
+                5. Assume the user's location is South Carolina, but if they state otherwise, then adjust your answers to that area instead.
+                6. If a user asks a question completely unrelated to driving in general, politely bring their attention back to either driving in general, their driving progress or their performance data.
+                7. Use the performance data. Offer tailored advice to the user based on their logs and analyze trends and recent events.
+                8. If 'Hard Brake' is frequent, suggest scanning the road 15 seconds ahead.
+                9. If 'Sharp Turn' is frequent, suggest slowing down before the apex of the turn.
+                10. If 'Normal' is the only thing logged, congratulate them on smooth driving!
+                
+                STUDENT PROGRESS LOG
+                """
+            
+            for day in sortedDays {
+                let tasks = plans[day] ?? []
+                let done = tasks.filter { completedTasks.contains($0) }
+                
+                if !done.isEmpty {
+                    context += "\n- \(day): \(done.count)/\(tasks.count) tasks finished."
+                }
+            }
+            
+            let nextDay = sortedDays.first(where: { day in
+                let tasks = plans[day] ?? []
+                return !tasks.allSatisfy { completedTasks.contains($0) }
+            }) ?? "Course Complete!"
+            
+            context += "\n\nCURRENT GOAL: \(nextDay)."
+            
+            return context
         }
-        saveData()
-    }
-    
-    private func isDayComplete(_ day: String) -> Bool {
-        guard let tasks = plans[day] else { return false }
-        return tasks.allSatisfy { completedTasks.contains($0) }
-    }
-    
-    private func saveData() {
-        if let encodedTasks = try? JSONEncoder().encode(completedTasks) {
-            completedTasksData = encodedTasks
+        
+        private func saveData() {
+            if let encodedTasks = try? JSONEncoder().encode(completedTasks) {
+                UserDefaults.standard.set(encodedTasks, forKey: tasksKey)
+            }
+            if let encodedDays = try? JSONEncoder().encode(expandedDays) {
+                UserDefaults.standard.set(encodedDays, forKey: daysKey)
+            }
         }
-        if let encodedDays = try? JSONEncoder().encode(expandedDays) {
-            expandedDaysData = encodedDays
+        
+        private func loadData() {
+            if let data = UserDefaults.standard.data(forKey: tasksKey),
+               let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
+                completedTasks = decoded
+            }
+            if let data = UserDefaults.standard.data(forKey: daysKey),
+               let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
+                expandedDays = decoded
+            }
         }
-    }
-    
-    private func loadData() {
-        if let decoded = try? JSONDecoder().decode(Set<String>.self, from: completedTasksData) {
-            completedTasks = decoded
-        }
-        if let decodedDays = try? JSONDecoder().decode(Set<String>.self, from: expandedDaysData) {
-            expandedDays = decodedDays
-        }
-    }
-}
-    
-    #Preview {
-        Plans()
     }

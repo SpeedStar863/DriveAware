@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-01-18T22:52:04Z",
+        "event" : "projectCreated",
+        "id" : "533DF465-97BF-4F33-A12C-10429A7FD3B5",
+        "subtitle" : "Harsh Event Classifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Alexander Ur",
+  "createdDate" : "2026-01-18T22:52:04Z",
+  "description" : "This classifier detects if a car performs one of five events over the course of a driving session: hard acceleration, hard brake, normal, sharp turn, or hard bump.",
+  "id" : "FBEC00B3-6860-4348-BF57-E3C687CEF866",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-01-18T22:52:04Z",
+  "projectName" : "Harsh Event Classifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "generalClassifier",
+  "title" : "Tabular Classification",
+  "version" : "1.1"
+}

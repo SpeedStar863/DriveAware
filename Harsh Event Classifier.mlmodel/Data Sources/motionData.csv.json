@@ -1,0 +1,41 @@
+{
+  "activityEntities" : [
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-01-20T03:15:09Z",
+        "event" : "dataSourceMetrics",
+        "id" : "C1DED74A-0D89-467F-9783-1B0765588F9C",
+        "subtitle" : "5 Classes, 213 Items",
+        "title" : "Data Summary"
+      }
+    ],
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-01-20T03:15:09Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "6AFB57A3-D962-4F9D-B7BB-6245DFF204CF",
+        "subtitle" : "Harsh Event Classifier 1",
+        "title" : "Used By"
+      }
+    ]
+  ],
+  "createdDate" : "2026-01-20T03:07:28Z",
+  "dataPathRelativeToProjectURL" : "../../Downloads/motionData.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-01-20T03:07:28Z",
+    "dataSourceID" : "9B481424-C8F0-4970-878D-BDB28555A172",
+    "dataURL" : "file:///Users/speedstar863/Downloads/motionData.csv"
+  },
+  "dataURL" : "file:///Users/speedstar863/Downloads/motionData.csv",
+  "experimentIDs" : [
+    "78957BC4-391A-4A82-927F-CF9005D03DDD"
+  ],
+  "id" : "9B481424-C8F0-4970-878D-BDB28555A172",
+  "modifiedDate" : "2026-01-20T03:15:09Z",
+  "pathType" : 0,
+  "preferredFilename" : "motionData.csv",
+  "title" : "motionData.csv",
+  "version" : "1.0"
+}

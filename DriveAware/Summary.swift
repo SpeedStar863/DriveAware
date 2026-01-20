@@ -26,6 +26,10 @@ struct HomeButton: View {
 struct HomeView: View {
     let allLessons: [Lesson]
     
+    @StateObject var drivingManager = DrivingManager()
+    
+    @StateObject var motionManager = MotionManager(context: PersistenceController.shared.container.viewContext)
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -42,12 +46,18 @@ struct HomeView: View {
                         HomeButton(text: "Go to Instructional Lessons & Quizzes")
                     }
                     
-                    NavigationLink(destination: Plans()) {
+                    NavigationLink(destination: Plans(manager: DrivingManager())) {
                         HomeButton(text: "Go to Your Three-Week Driving Plan")
                     }
                     
                     NavigationLink(destination: DetectorView()) {
                         HomeButton(text: "Record Your Driving Performance")
+                    }
+                    
+                    NavigationLink {
+                        DriveChatView(context: drivingManager.generateAIContext(motionManager: motionManager))
+                    } label: {
+                        HomeButton(text: "Consult Your AI Driving Coach")
                     }
                     
                     NavigationLink(destination: FeedbackView()) {

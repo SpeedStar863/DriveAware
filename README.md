@@ -4,7 +4,6 @@
 ⚠️ Note: Due to character substitution and formatting errors in the submitted PDF, please use the verified links below to view the project materials. ⚠️
 
 
-
 For Presidential AI Challenge Team & Summer Science Program:
 
 DriveAware Video Demonstration: https://drive.google.com/file/d/1yFOaipCxeVtxNbejoqvYa7RdW9wUbNNe/view?usp=sharing

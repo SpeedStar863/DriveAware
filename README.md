@@ -1,7 +1,7 @@
 ⚠️ **Presidential AI Challenge Team & Summer Science Program** ⚠️
 
 
-⚠️ **Note: Due to character substitution and formatting errors in the submitted PDF, please use the verified links below to view the project materials.** ⚠️
+⚠️ Note: Due to character substitution and formatting errors in the submitted PDF, please use the verified links below to view the project materials. ⚠️
 
 
 **For Presidential AI Challenge Team & Summer Science Program:**
